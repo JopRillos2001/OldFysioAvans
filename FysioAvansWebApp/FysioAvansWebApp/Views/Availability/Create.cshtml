@@ -1,0 +1,38 @@
+﻿@model AvailabilityDetailsViewModel;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Toevoegen</h1>
+
+<h4>Beschikbaarheid</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group text-danger">
+                @Html.DisplayFor(model => model.error)
+            </div>     
+            <div class="form-group">
+                <label asp-for="StartAvailability" class="control-label">Startdatum beschikbaarheid</label>
+                <input asp-for="StartAvailability" value="@DateTime.Now.ToString("s")" class="form-control" />
+                <span asp-validation-for="StartAvailability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndAvailability" class="control-label">Einddatum beschikbaarheid</label>
+                <input asp-for="EndAvailability" value="@DateTime.Now.ToString("s")" class="form-control" />
+                <span asp-validation-for="EndAvailability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

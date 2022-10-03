@@ -1,0 +1,75 @@
+﻿@model PatientDetailsViewModel;
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Verwijderen</h1>
+
+<h3>Weet je zeker dat je dit wilt verwijderen?</h3>
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Patient:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname)
+        </dd>
+        <dt class="col-sm-2">
+            Patientnummer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientNumber)
+        </dd>
+        <dt class="col-sm-2">
+            Emailadres
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Profielfoto
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/img/PatientPhotos/@Model.Photo" class="rounded-circle" width="40" height="40" asp-append-version="true">
+        </dd>
+        <dt class="col-sm-2">
+            Geboortedatum
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Birthdate)
+        </dd>
+        <dt class="col-sm-2">
+            Beschrijving
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PatientDescription)
+        </dd>
+        <dt class="col-sm-2">
+            Diagnose code
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiagnosisCode)
+        </dd>
+        <dt class="col-sm-2">
+            Behandelsessie lengte in minuten
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SessionLength)
+        </dd>
+        <dt class="col-sm-2">
+            Aantal behandelingen per week
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TreatmentsPerWeek)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PatientId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

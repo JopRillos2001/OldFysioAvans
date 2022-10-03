@@ -1,0 +1,35 @@
+﻿@model PhysiotherapistDetailsViewModel;
+
+@{
+    ViewData["Title"] = "Mijn details";
+}
+
+<h1>Details</h1>
+
+<h3>Dit zijn je patient gegevens</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Patient:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Firstname)  @Html.DisplayFor(model => model.Lastname)
+        </dd>
+        <dt class="col-sm-2">
+            Patientnummer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhysiotherapistNumber)
+        </dd>
+        <dt class="col-sm-2">
+            Emailadres
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <div class="col-lg-12">
+            @Html.ActionLink("Bekijk behandelingen", "Index", "Treatment", null, new { @class = "btn btn-success color-green text-dark" })
+        </div>
+    </dl>
+</div>

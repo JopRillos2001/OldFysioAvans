@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AvailabilityDetailsViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        @Html.ActionLink("Voeg beschikbaarheid toe", "Create", "Availability", null, new { @class = "btn btn-success color-green text-dark" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Beschrijving</td>
+                    <td>Behandeldatum</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    @foreach (var Availability in Model)
+                    {
+                        <tr>
+                            <td>@Availability.AvailabilityId</td>
+                            <td>@Availability.StartAvailability</td>
+                            <td>@Availability.EndAvailability</td>
+                            <td class="text-center">@Html.ActionLink("Edit", "Edit", "Availability", new { Id = Availability.AvailabilityId }) | @Html.ActionLink("Delete", "Delete", "Availability", new { Id = Availability.AvailabilityId })</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                <td colspan="5" class="text-center">
+                    No records found
+                </td>
+            }
+                </tbody>
+            </table>
+        </div>
+    </div>
+

@@ -1,0 +1,132 @@
+﻿@model PatientDetailsViewModel;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Toevoegen</h1>
+
+<h4>Patient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group text-danger">
+                @Html.DisplayFor(model => model.error)
+            </div>
+            <div class="form-group">
+                <label asp-for="File" class="control-label">Profielfoto patient</label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label">Geslacht</label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="Man">Man</option>
+                    <option value="Vrouw">Vrouw</option>
+                    <option value="Onzijdig">Onzijdig</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Birthdate" class="control-label">Geboortedatum</label>
+                <input type="date" asp-for="Birthdate" value="@DateTime.Now.ToString("s")" class="form-control" />
+                <span asp-validation-for="Birthdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Emailadres</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Wachtwoord</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId" class="control-label">Patient profiel</label>
+                @Html.DropDownListFor(
+                    x => x.PersonId,
+                    new SelectList(Model.Persons, "Id", "Fullname", Model.PersonId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="PersonId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientDescription" class="control-label">Omschrijving klacht patient</label>
+                <input asp-for="PatientDescription" class="form-control" />
+                <span asp-validation-for="PatientDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiagnosisCode" class="control-label">Diagnose code</label>
+                @Html.DropDownListFor(
+                    x => x.DiagnosisCode,
+                    new SelectList(Model.Diagnoses, "Id", "CombinedField", Model.DiagnosisCode),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="DiagnosisCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label">Medewerker</label>
+                @Html.DropDownListFor(
+                    x => x.EmployeeId,
+                    new SelectList(Model.PhysiotherapistDetails, "PhysiotherapistId", "Combined", Model.EmployeeId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntakeEmployeeId" class="control-label">Medewerker intake patient</label>
+                @Html.DropDownListFor(
+                    x => x.IntakeEmployeeId,
+                    new SelectList(Model.PhysiotherapistDetails, "PhysiotherapistId", "Combined", Model.IntakeEmployeeId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="IntakeEmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupervisorId" class="control-label">Leidinggevende mederwerker</label>
+                @Html.DropDownListFor(
+                    x => x.SupervisorId,
+                    new SelectList(Model.TeacherPhysiotherapistDetails, "PhysiotherapistId", "Combined", Model.SupervisorId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="SupervisorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CaretakerId" class="control-label">Hoofdbehandelaar</label>
+                @Html.DropDownListFor(
+                    x => x.CaretakerId,
+                    new SelectList(Model.TeacherPhysiotherapistDetails, "PhysiotherapistId", "Combined", Model.CaretakerId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="CaretakerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisterDate" class="control-label">Registreerdatum</label>
+                <input type="date" asp-for="RegisterDate" value="@DateTime.Now.ToString("s")" class="form-control" />
+                <span asp-validation-for="RegisterDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TreatmentsPerWeek" class="control-label">Aantal behandelingen per week</label>
+                <input asp-for="TreatmentsPerWeek" class="form-control" />
+                <span asp-validation-for="TreatmentsPerWeek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SessionLength" class="control-label">Behandelsessie lengte in minuten</label>
+                <input asp-for="SessionLength" class="form-control" />
+                <span asp-validation-for="SessionLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,86 @@
+﻿@model TreatmentDetailsViewModel;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Aanpassen</h1>
+
+<h4>Behandeling</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TypeId" class="control-label"></label>
+                @Html.DropDownListFor(
+                    x => x.TypeId,
+                    new SelectList(Model.VTreatments, "Id", "CombinedField", Model.TypeId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="TypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeNotesId" class="control-label"></label>
+                <input asp-for="TypeNotesId" class="form-control" />
+                <span asp-validation-for="TypeNotesId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room" class="control-label"></label>
+                <input asp-for="Room" class="form-control" />
+                <span asp-validation-for="Room" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CaretakerId" class="control-label">Medewerker</label>
+                @Html.DropDownListFor(
+                    x => x.CaretakerId,
+                    new SelectList(Model.Physios, "PhysiotherapistId", "Fullname", Model.CaretakerId),
+                    "-- Select --", new { @class = "form-control" }
+               )
+                <span asp-validation-for="CaretakerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TreatmentDate" class="control-label"></label>
+                <input asp-for="TreatmentDate" class="form-control" />
+                <span asp-validation-for="TreatmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientFileId" class="control-label"></label>
+                @Html.DropDownListFor(
+                x => x.PatientFileId,
+                new SelectList(Model.PatientFiles, "PatientFileId", "Pat", Model.PatientFileId),
+                "-- Select --", new { @class = "form-control" }
+           )
+                <span asp-validation-for="PatientFileId" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="hidden" asp-for="TreatmentId" />
+                <input type="hidden" asp-for="Date" />
+                <input type="hidden" asp-for="NotetakerId" />
+                <input type="hidden" asp-for="Notes" />
+                <input type="hidden" asp-for="VisibleForPatient" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

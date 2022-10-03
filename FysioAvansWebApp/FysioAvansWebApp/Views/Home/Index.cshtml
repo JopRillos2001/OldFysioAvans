@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Fysio Avans</h1>
+    <p>Welkom bij de website van Fysio Avans!</p>
+    <p>Als je een afspraak wilt maken moet je eerst inloggen via login rechtsbovenin het scherm.</p>
+    <p>Via onderstaande knop vind het de contactgegevens:</p>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            @Html.ActionLink("Contactgegevens", "Details", "Home", null, new { @class = "btn btn-success color-green text-dark" })
+        </div>
+    </div>
+</div>

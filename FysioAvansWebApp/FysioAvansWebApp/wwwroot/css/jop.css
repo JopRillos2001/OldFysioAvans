@@ -1,0 +1,36 @@
+﻿@font-face {
+    src: url(fonts/AvenirLTProLight.otf);
+    font-family: Avenir;
+}
+
+.color-white {
+    background-color: #F1F3EF;
+}
+
+.color-blue {
+    background-color: #00BEF7;
+}
+
+.color-cyan {
+    background-color: #00DADA;
+}
+
+.color-green {
+    background-color: #B5EB51;
+}
+
+.color-yellow {
+    background-color: #EBE900;
+}
+
+.logomain {
+    height: 75px;
+    width: auto;
+}
+
+body {
+    font-family: "Avenir";
+}
+
+
+

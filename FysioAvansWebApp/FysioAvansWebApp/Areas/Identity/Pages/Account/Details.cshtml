@@ -1,0 +1,22 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity
+@using FysioAvansWebApp.Areas.Identity.Data
+
+@inject SignInManager<FysioAvansWebAppUser> SignInManager
+@inject UserManager<FysioAvansWebAppUser> UserManager
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <h2>Detail Page</h2>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

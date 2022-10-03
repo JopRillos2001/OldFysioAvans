@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FysioAPI", "FysioAPI\FysioAPI.csproj", "{A8C19E9A-908B-42AC-9436-566728BE760D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FysioAPI.Domain", "FysioAPI.Domain\FysioAPI.Domain.csproj", "{BC098EC5-D5D8-47E7-9146-4723A97B7364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FysioAPI.Infra", "FysioAPI.Infra\FysioAPI.Infra.csproj", "{3F4B6220-470F-4A58-8487-FC9725DB63EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8C19E9A-908B-42AC-9436-566728BE760D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C19E9A-908B-42AC-9436-566728BE760D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C19E9A-908B-42AC-9436-566728BE760D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C19E9A-908B-42AC-9436-566728BE760D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC098EC5-D5D8-47E7-9146-4723A97B7364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC098EC5-D5D8-47E7-9146-4723A97B7364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC098EC5-D5D8-47E7-9146-4723A97B7364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC098EC5-D5D8-47E7-9146-4723A97B7364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4B6220-470F-4A58-8487-FC9725DB63EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4B6220-470F-4A58-8487-FC9725DB63EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4B6220-470F-4A58-8487-FC9725DB63EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4B6220-470F-4A58-8487-FC9725DB63EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {046FA5E9-9EC1-4EDC-9DFF-71FDD6B54BDC}
+	EndGlobalSection
+EndGlobal
